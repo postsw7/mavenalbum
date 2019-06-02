@@ -37,11 +37,11 @@ function App() {
           isUserSelected={isUserSelected}
           {...actions}
         />
-        <div className='columns is-multiline'>
+        <div className='columns is-multiline is-mobile'>
           {!isUserSelected &&
             allAlbums.map(album => {
               return (
-                <div className='column is-one-quarter' key={album.id}>
+                <div className='column is-one-quarter is-narrow' key={album.id}>
                   <Album
                     album={album}
                     getPhotosOfAlbum={actions.getPhotosOfAlbum}
