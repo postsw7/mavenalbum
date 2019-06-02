@@ -83,7 +83,16 @@ const Navbar = ({
             <strong>Albums</strong>
           </a>
         </p>
-        <p className='level-item' onClick={handleClickOnPhotoView}>
+        <p
+          className='level-item'
+          onClick={() => {
+            if (photosLen === 0) {
+              alert('There is no photos!');
+              return;
+            }
+            handleClickOnPhotoView();
+          }}
+        >
           <a className='button is-success'>
             <strong>Photos</strong>
           </a>
