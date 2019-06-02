@@ -4,10 +4,8 @@ import {
   useAlbumList,
   AppContext,
   useAppState,
-} from './utils/Hooks';
-import Navbar from './components/Navbar';
-import Album from './components/Album';
-import Photo from './components/Photo';
+} from 'utils/Hooks';
+import { Navbar, Album, Photo } from 'components';
 import './App.scss';
 
 function App() {
