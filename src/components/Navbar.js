@@ -107,6 +107,17 @@ const Navbar = ({
 
 export default Navbar;
 
+Navbar.defaultProps = {
+  users: [],
+  albumsLen: 0,
+  photosLen: 0,
+  allAlbumsLen: 0,
+  handleClickOnAlbumView: () => {},
+  handleClickOnPhotoView: () => {},
+  getAlbumsOfUser: () => {},
+  resetState: () => {},
+};
+
 Navbar.propTypes = {
   users: arrayOf(
     shape({

@@ -21,3 +21,12 @@ it('renders without crashing', () => {
     ReactDOM.unmountComponentAtNode(container);
   });
 });
+
+it('renders Select User as default value of drop-down list', () => {
+  act(() => {
+    ReactDOM.render(<App />, container);
+  });
+
+  const select = container.querySelector('select');
+  expect(select.value).toBe('Select User');
+});
