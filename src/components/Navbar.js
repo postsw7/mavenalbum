@@ -1,5 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useRef } from 'react';
+import {
+  bool,
+  string,
+  number,
+  func,
+  object,
+  arrayOf,
+  objectOf,
+  oneOfType,
+  shape,
+} from 'prop-types';
 
 const Navbar = ({
   users,
@@ -83,3 +94,27 @@ const Navbar = ({
 };
 
 export default Navbar;
+
+Navbar.propTypes = {
+  users: arrayOf(
+    shape({
+      address: objectOf(oneOfType([string, object])),
+      company: objectOf(oneOfType([string])),
+      email: string,
+      id: number.isRequired,
+      name: string.isRequired,
+      phone: string,
+      username: string.isRequired,
+      website: string,
+    })
+  ),
+  albumsLen: number.isRequired,
+  photosLen: number.isRequired,
+  allAlbumsLen: number.isRequired,
+  isPhotoView: bool,
+  isUserSelected: bool,
+  handleClickOnAlbumView: func.isRequired,
+  handleClickOnPhotoView: func.isRequired,
+  getAlbumsOfUser: func.isRequired,
+  resetState: func.isRequired,
+};
