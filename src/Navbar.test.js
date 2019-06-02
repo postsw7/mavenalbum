@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
-import App from './App';
+import { Navbar } from 'components';
 
 let container;
 
@@ -17,7 +17,14 @@ afterEach(() => {
 
 it('renders without crashing', () => {
   act(() => {
-    ReactDOM.render(<App />, container);
-    ReactDOM.unmountComponentAtNode(container);
+    ReactDOM.render(<Navbar />, container);
   });
+});
+
+it('has three buttons', () => {
+  act(() => {
+    ReactDOM.render(<Navbar />, container);
+  });
+  const buttons = container.querySelectorAll('.button');
+  expect(buttons.length).toBe(3);
 });
