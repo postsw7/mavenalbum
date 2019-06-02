@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAppContext, useUserName } from '../utils/Hooks';
+import { string, number, func } from 'prop-types';
 
 const Album = ({ album: { id, title, userId }, getPhotosOfAlbum }) => {
   const { isUserSelected } = useAppContext();
@@ -32,3 +33,17 @@ const Album = ({ album: { id, title, userId }, getPhotosOfAlbum }) => {
 };
 
 export default Album;
+
+Album.defaultProps = {
+  id: 0,
+  userId: 0,
+  title: '',
+  getPhotosOfAlbum: () => {},
+};
+
+Album.propTypes = {
+  id: number.isRequired,
+  userId: number.isRequired,
+  title: string.isRequired,
+  getPhotosOfAlbum: func.isRequired,
+};
