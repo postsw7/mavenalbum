@@ -11,6 +11,7 @@ const Navbar = ({
   handleClickOnAlbumView,
   handleClickOnPhotoView,
   getAlbumsOfUser,
+  resetState,
 }) => {
   const selectEl = useRef(null);
   return (
@@ -51,8 +52,14 @@ const Navbar = ({
               </div>
             </div>
             <p className='control'>
-              <button className='button is-info' onClick={() => {}}>
-                <strong>Go</strong>
+              <button
+                className='button is-info'
+                onClick={() => {
+                  selectEl.current.selectedIndex = 0;
+                  resetState();
+                }}
+              >
+                <strong>Reset</strong>
               </button>
             </p>
           </div>

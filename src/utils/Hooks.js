@@ -59,7 +59,10 @@ export const useAppState = () => {
 
   const [state, setState] = useState(initialState);
 
-  const actions = useMemo(() => getActions(setState), [setState]);
+  const actions = useMemo(() => getActions(setState, initialState), [
+    setState,
+    initialState,
+  ]);
 
   return { state, actions };
 };
@@ -103,5 +106,8 @@ const getActions = (setState, initialState) => ({
       isUserSelected: true,
       selectedUserAlbums: data,
     }));
+  },
+  resetState: () => {
+    setState(initialState);
   },
 });
