@@ -11,6 +11,7 @@ import {
   oneOfType,
   shape,
 } from 'prop-types';
+import mavennetLogo from 'assets/mavennet_logo.png';
 
 const Navbar = ({
   users,
@@ -56,7 +57,7 @@ const Navbar = ({
                   </option>
                   {users.map(user => (
                     <option key={user.id} value={user.id}>
-                      {user.name}
+                      {user.username}
                     </option>
                   ))}
                 </select>
@@ -76,7 +77,9 @@ const Navbar = ({
           </div>
         </div>
       </div>
-
+      <p className='level-item has-text-centered'>
+        <img className='logo' src={mavennetLogo} alt='logo' />
+      </p>
       <div className='level-right'>
         <p className='level-item' onClick={handleClickOnAlbumView}>
           <a className='button is-primary'>
